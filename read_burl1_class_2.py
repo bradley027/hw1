@@ -27,8 +27,8 @@ class read_burl1():
         windsp = []
         winddir = []
         date = []
-        Nwind_v = [] 
-        Ewind_u = []
+        v = [] 
+        u = []
         
         #data import to fill above lists (that will soon be arrays) 
         for line in f.readlines()[2:]:
@@ -43,28 +43,20 @@ class read_burl1():
         date = [datetime.strptime(date[z],'%Y%m%d%H')for z in range(len(date))]
         
         #creating arrays 
-        date_1 = np.array(date)
+        date = np.array(date)
         windsp = np.array(windsp)
         winddir = np.array(winddir)
         slp = np.array(slp)
 
         #converting wind speed & direction to vectors 
-        Nwind_v = -windsp*np.cos(winddir)
-        Ewind_u = -windsp*np.sin(winddir)
+        v = -windsp*np.cos(winddir)
+        u = -windsp*np.sin(winddir)
         
-        self.output = {'Date (year,month,day,hours)':date_1, 'Sea-level Pressure': slp,'Eastward Wind':Ewind_u, 'Northward Wind': Nwind_v}
+        self.date = date
+        self.slp = slp
+        self.v = v
+        self.u = u 
         
-        #self.date = date
-        #self.pressure = pressure
-        #self.wU = wU
-        #self.wV = wV 
-        
-    #def __repr__(self):
-        #return self.output 
         
 data = read_burl1('burl1h2011.txt')
 #data2 = read_burl1('burl1h2012.txt') 
-
-
-#print data.output
-
