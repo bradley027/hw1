@@ -1,20 +1,22 @@
 # OCNG 689 Python for Geoscientists 
+# Kelley Bradley
 # HW 1
 # Part 2: Function 
-# This script will read in burl1 data and output wind components, 
-# sea-level pressure, & dates (in datetime format) from created arrays.
-# Notes:  
-# 1) the wind components of speed & direction will be converted to 
-# northward & eastward wind vectors. 
-# 2) the entire array will not be displayed (i.e. [###, ... ###])
-# 3) used different way of creating date data 
-# 4) printed data arrays individually to see if that would make a difference 
-#    in printing style 
 
 import numpy as np
 from datetime import datetime 
 
 def burl1_read():
+    ''' This function will read in burl1 data and output wind components, 
+     sea-level pressure, & dates (in datetime format) from created arrays.
+     Notes:  
+     1) the wind components of speed & direction will be converted to 
+     northward & eastward wind vectors. 
+     2) the entire array will not be displayed (i.e. [###, ... ###])
+     3) used different way of creating date data 
+     4) printed data arrays individually to see if that would make a difference 
+        in printing style'''
+    
     f = open('burl1h2011.txt')
 
     #variable initilization (lists, not converted to arrays yet)

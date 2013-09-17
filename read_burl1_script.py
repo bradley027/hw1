@@ -1,4 +1,5 @@
 # OCNG 689 Python for Geoscientists 
+# Kelley Bradley
 # HW 1
 # Part 1: Script 
 # This script will read in burl1 data and output wind components, 

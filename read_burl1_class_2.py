@@ -1,16 +1,7 @@
 # OCNG 689 Python for Geoscientists 
+# Kelley Bradley
 # HW 1
 # Part 3: Class 
-# This script contains a class that will return a single instance of
-# reading in burl1 data and output wind components, 
-# sea-level pressure, & dates (in datetime format) from created arrays in the
-# way that the original script (not the function) printed the data.
-# Notes:  
-# 1) the wind components of speed & direction will be converted to 
-# northward & eastward wind vectors. 
-# 2) the entire array will not be displayed (i.e. [###, ... ###])
-# 3) used datetime.strptime object 
-# 4) used data output instead of print data arrays individually
 
 import numpy as np
 from datetime import datetime 
@@ -18,6 +9,18 @@ from math import cos
 from math import sin
 
 class read_burl1():
+    
+    '''This code contains a class that will return a single instance of
+     reading in burl1 data and output wind components, 
+     sea-level pressure, & dates (in datetime format) from created arrays in the
+     way that the original script (not the function) printed the data.
+    Notes:  
+     1) the wind components of speed & direction will be converted to 
+     northward & eastward wind vectors. 
+     2) the entire array will not be displayed (i.e. [###, ... ###])
+     3) used datetime.strptime object 
+     4) used data output instead of print data arrays individually
+     5) used object instances for arrays'''
     
     def __init__(self, name_of_file):
         self.name_of_file = name_of_file
@@ -60,3 +63,8 @@ class read_burl1():
         
 data = read_burl1('burl1h2011.txt')
 #data2 = read_burl1('burl1h2012.txt') 
+
+#examples of what you could do: 
+# plot(data.date,data.u)
+# np.sqrt(data.u**2)
+# 
